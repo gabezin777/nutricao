@@ -17,6 +17,7 @@ var tdAltura = document.querySelector(".info-altura");
 var altura = tdAltura.textContent;
 console.log(altura);
 
+var tdImc = document.querySelector(".info-imc");
 
 //vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 var pesoehValido = true;
