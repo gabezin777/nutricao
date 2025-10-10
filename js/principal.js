@@ -8,7 +8,7 @@ titulo.textContent = ("gabe");
 
 
 var paciente = document.querySelector("#primeiro-paciente");
-var tdPeso = paciente.querySelector("info-peso");
+var tdPeso = paciente.querySelector(".info-peso");
 var peso = tdPeso.textContent;
 console.log(paciente);
 console.log(tdpeso);
@@ -17,7 +17,7 @@ console.log(tdpeso);
 
 
 var tdAltura = document.querySelector("#primeiro-paciente");
-var altura = document.querySelector("info-altura");
+var altura = document.querySelector(".info-altura");
 var altura = tdAltura.textContent;
 console.log(altura);
 
