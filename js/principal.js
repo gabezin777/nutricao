@@ -27,13 +27,14 @@ if (peso < 0 || peso > 1000) {
   console.log("peso inválido"); 
   var pesoehValido = false;
   tdImc.textContent = "Peso invalido!";
+  paciente.computedStyleMap.backgoundColor = "lightcoral";
 }
 
 if(altura < 0||altura > 3.00){
    console.log("Altura inválida");
     var alturaehValido = false;
     tdImc.textContent= imc.toFixed(2);
-    td
+    paciente.computedStyleMap.backgoundColor = "lightcoral";
 }
 
  if(alturaehValida && pesoehValido){
