@@ -1,43 +1,74 @@
-//console.log(document.querySelector("h1"));
 var titulo = document.querySelector("h1");
 console.log(titulo);
 console.log(titulo.textContent);
-titulo.textContent = ("gabe");
+titulo.textContent = ("Aparecida Nutricionista");
 
-var paciente = document.querySelector("#primeiro-paciente");
-var tdNome = document.querySelector(".info-nome");
-var nome = tdNome.textContent;
-console.log(nome);
 
-var tdPeso = paciente.querySelector(".info-peso");
-var peso = tdPeso.textContent;
-console.log(peso);
 
-var tdAltura = document.querySelector(".info-altura");
-var altura = tdAltura.textContent;
-console.log(altura);
 
-var tdImc = document.querySelector(".info-imc");
+21/10
 
-//vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-var pesoehValido = true;
-var alturaehValido = true;
 
-if (peso < 0 || peso > 1000) {
-  console.log("peso inválido"); 
-  var pesoehValido = false;
-  tdImc.textContent = "Peso invalido!";
-  paciente.computedStyleMap.backgoundColor = "lightcoral";
+var pacientes = document.querySelectorAll(".paciente");
+
+
+for (var i = 0; i < pacientes.length; i++) {
+
+
+   var paciente = pacientes[i];
+
+
+   var tdPeso = paciente.querySelector(".info-peso");
+   var peso = tdPeso.textContent;
+
+
+   var tdAltura = paciente.querySelector(".info-altura");
+   var altura = tdAltura.textContent;
+
+
+   var tdImc = paciente.querySelector(".info-imc");
+
+
+   var pesoEhValido = true;
+   var alturaEhValida = true;
+
+
+   if (peso <= 0 || peso >= 1000) {
+       console.log("Peso inválido!");
+       pesoEhValido = false;
+       tdImc.textContent = "Peso inválido";
+       // paciente.style.backgroundColor = "red";
+       paciente.classList.add("paciente-invalido");
+   }
+
+
+   if (altura <= 0 || altura >= 3.00) {
+       console.log("Altura inválida!");
+       alturaEhValida = false;
+       tdImc.textContent = "Altura inválida";
+        paciente.classList.add("paciente-invalido");
+   }
+
+
+ if (alturaEhValida && pesoEhValido) {
+       var imc = peso / (altura * altura);
+       tdImc.textContent = imc.toFixed(2);
+   }
 }
 
-if(altura < 0||altura > 3.00){
-   console.log("Altura inválida");
-    var alturaehValido = false;
-    tdImc.textContent= imc.toFixed(2);
-    paciente.computedStyleMap.backgoundColor = "lightcoral";
+
+// 23/10
+
+
+// titulo.addEventListener() adiciona um escutador de eventos.
+// PRIMEIRO MOSTRAR ESSA - DEPOIS ALTERA-LA PARA FICAR ANONIMA
+titulo.addEventListener("click", mostraMensagem);
+function mostraMensagem(){
+   alert("Olá eu fui clicado.")
 }
 
- if(alturaehValida && pesoehValido){
-   var imc = peso / (altura * altura) ;
-   tdImc.textContent = imc;
- }
+
+// funcao anonima = a de cima mas diferente
+titulo.addEventListener("click", function(){
+   alert("Ola eu fui clicado numa funcao anonima");
+});
